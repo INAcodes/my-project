@@ -73,6 +73,32 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML=Math.round(celsiusTemperature);
 }
+function showCity(response) {
+  let respondedCity = response.data.city;
+  let city = document.querySelector("#city");
+  city.innerHTML = respondedCity;
+}
+function showPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "c73239399918e583c389935335c11e48";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeatherConditions);
+  let reverseApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
+  axios.get(reverseApiUrl).then(showCity);
+}
+
+function getCurrentPosition() {
+  if (navigator.geolocation){
+  navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    "Sorry, we couldn't find your current position. Please type your city, instead.";
+  }
+  }
+
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
 
 let fahrenheitLink=document.querySelector("#fahrenheit-link")

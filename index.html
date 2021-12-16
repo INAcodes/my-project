@@ -2,11 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" 
+        content="IE=edge">
+  <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
   <title>Weather app</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" 
+        href="style.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+        crossorigin="anonymous">
+  <link rel="stylesheet" 
+        href="src/weather.icons.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
@@ -14,9 +26,10 @@
   <div class="container">
     <div class="weather-app-wrappper">
       <div class="weather-app">
+        <span>
         <form id="search-form" class="mb-3">
           <div class="row">
-            <div class="col-9">
+            <div class="col-6">
               <input 
               type="search"
               placeholder="Type a city..."
@@ -32,8 +45,28 @@
              class="btn btn-primary w-100"
              />
           </div>
-          </div>
         </form>
+        <div class="col-3">
+        <button class="btn btn-secondary" 
+                id="current-location-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-geo-alt"
+                  viewBox="0 0 16 16"
+                >
+                <path
+                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"
+                  />
+                  <path
+                    d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                  />
+                </svg>
+              </button>
+              </div>
+              </span>
         <div class="overview">
           <h1 id="city"></h1>
           <h4>
@@ -44,11 +77,6 @@
         <div class="row">
           <div class="col-6">
             <div class="clearfix weather-temperature">
-              <img 
-                src="http://openweathermap.org/img/wn/01n@2x.png" 
-                alt="Clear" 
-                id="icon" 
-                class="float-left"/>
               <div class="float-left">
                  <span id="temperature">21</span>
                  <span class="units">
@@ -68,9 +96,71 @@
             </ul>
           </div>
         </div>
-        <div class="weather-forecast" id="forecast"></div>
       </div>
-      <small>
+      <div class="container">
+		<div class="row">
+				<div class="col-2">
+						Wed
+				</div>
+				<div class="col-2">
+						Thu
+				</div>
+				<div class="col-2">
+						Fri
+				</div>
+				<div class="col-2">
+						Sat
+				</div>
+				<div class="col-2">
+						Sun
+				</div>
+				<div class="col-2">
+						Mon
+				</div>
+		</div>
+</div>
+<div class="container">
+		<div class="row">
+				<div class="col-2">
+						⛈
+				</div>
+				<div class="col-2">
+						🌧
+				</div>
+				<div class="col-2">
+						🌧
+				</div>
+				<div class="col-2">
+						🌦
+				</div>
+				<div class="col-2">
+						🌦
+				</div>
+				<div class="col-2">
+						🌤
+				</div>
+
+<div class="container">
+		<div class="row">
+				<div class="col-2">
+						6℃
+				</div>
+				<div class="col-2">
+						8℃
+				</div>
+				<div class="col-2">
+						9℃
+				</div>
+				<div class="col-2">
+						11℃
+				</div>
+				<div class="col-2">
+						10℃
+				</div>
+				<div class="col-2">
+						15℃
+				</div>
+      <small class="link">
         <a href="https://github.com/INAcodes/my-project"
            target="-blank"
         >Open-sourse code</a> 
