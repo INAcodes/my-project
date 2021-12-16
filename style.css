@@ -1,5 +1,7 @@
 body {
   font-family: arial, sans-serif;
+  max-width: 600px;
+
 }
 
 h1 {
@@ -28,6 +30,10 @@ li {
 
 li:first-letter {
   text-transform: capitalize;
+}
+img {
+    vertical-align: middle;
+
 }
 
 .weather-app-wrapper {
