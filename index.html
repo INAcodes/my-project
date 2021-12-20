@@ -22,14 +22,14 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
-<body>
-  <div class="container">
+<body background="https://images.unsplash.com/photo-1551596210-4da509bd1e99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjF8NjgzMTY3OTZ8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=60">
+  <div class="container" >
     <div class="weather-app-wrappper">
       <div class="weather-app">
         <span>
         <form id="search-form" class="mb-3">
           <div class="row">
-            <div class="col-6">
+            <div class="col-8">
               <input 
               type="search"
               placeholder="Type a city..."
@@ -45,8 +45,7 @@
              class="btn btn-primary w-100"
              />
           </div>
-        </form>
-        <div class="col-3">
+      <div class="col-1">
         <button class="btn btn-secondary" 
                 id="current-location-button">
                 <svg
@@ -66,7 +65,9 @@
                 </svg>
               </button>
               </div>
+            </form>
               </span>
+
         <div class="overview">
           <h1 id="city"></h1>
           <h4>
@@ -77,8 +78,9 @@
         <div class="row">
           <div class="col-6">
             <div class="clearfix weather-temperature">
+             <img src="" alt="Clear" id="icon" class="float-left" />
               <div class="float-left">
-                 <span id="temperature">21</span>
+                 <strong id="temperature">21</strong>
                  <span class="units">
                  <a href="#" 
                     id="celsius-link">°C </a>
@@ -97,30 +99,36 @@
           </div>
         </div>
       </div>
-      <div class="weather-forecast" id="forecast">
-		   <div class="row">
-				<div class="col-2">
+      <div class="forecast-wrapper">
+       <div class="weather-forecast" id="forecast">
+		    <div class="row">
+				 <div class="col-2">
           <div class="weather-forcast-date">
             Thu
           </div>
           <img 
-          src="http://openweathermap.org/img/wn/50d@2x.png"
+          src="http://openweathermap.org/img/wn/04d@2x.png"
           alt=""
-          width="36"
+          width="42"
           />
-          <div class="weather-forecast-temperatures">
+          <div class="weather-forecast-temperature">
             <span class="weather-forecast-temperature-max">18°</span>
             <span class="weather-forecast-temperature-min">12°</span>
           </div>
-			</div>		
-      <small class="link">
+          <hr />
+          <span class="link">
         <a href="https://github.com/INAcodes/my-project"
            target="-blank"
         >Open-sourse code</a> 
         by Ina Hadaj
-      </small>
-    </div>
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+    </div>		
   </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
