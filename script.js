@@ -51,7 +51,7 @@ function displayForecast(response) {
     
 
   forecastHTML = forecastHTML + `</div>`;
-  forecast.innerHTML = forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
 }
 function getForecast(coordinates) {
   let apiKey = "c73239399918e583c389935335c11e48";
