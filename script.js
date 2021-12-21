@@ -12,6 +12,7 @@ function formatDate(timestamp){
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+
 function formatDay (timestamp){
   let date = new Date (timestamp * 1000);
   let day = date.getDay();
@@ -21,6 +22,7 @@ function formatDay (timestamp){
 }
 function displayForecast(response) {
   let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -49,7 +51,7 @@ function displayForecast(response) {
     
 
   forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+  forecast.innerHTML = forecastHTML;
 }
 function getForecast(coordinates) {
   let apiKey = "c73239399918e583c389935335c11e48";
@@ -78,17 +80,6 @@ iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data
 iconElement.setAttribute("alt", response.data.weather[0].description);
 getForecast (response.data.coord);
 }
-
-function getForecast(coordinates) {
-  let urlBase = "https://api.openweathermap.org/data/2.5/onecall?";
-  let apiKey = "c73239399918e583c389935335c11e48";
-  let lat = coordinates.lat;
-  let lon = coordinates.lon;
-  let apiUrl = `${urlBase}lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showForecast);
-}
-
-
 function search (city) {
   let apiKey = "c73239399918e583c389935335c11e48";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -103,8 +94,7 @@ search(cityInputElement.value);
 let celsiusTemperature=null;
 let fahrenheitTemperature=(celsiusTemperature * 9)/5+32;
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
+
 
 function displayFahrenheitTemperature(event){
   event.preventDefault();
@@ -146,8 +136,11 @@ currentLocationButton.addEventListener("click", getCurrentPosition);
 
 let fahrenheitLink=document.querySelector("#fahrenheit-link")
 fahrenheitLink.addEventListener("click",displayFahrenheitTemperature);
+
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 search("New York");
