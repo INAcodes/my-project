@@ -98,27 +98,30 @@ let fahrenheitTemperature=(celsiusTemperature * 9)/5+32;
 
 function displayFahrenheitTemperature(event){
   event.preventDefault();
-  let temperatureElement=document.querySelector("temperature");
+  let temperatureElement=document.querySelector("#temperature");
+  let fahrenheitTemperature = ( celsiusTemperature * 9) /5+32;
   temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
 }
+
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML=Math.round(celsiusTemperature);
 }
+
 function showCity(response) {
   let respondedCity = response.data.city;
   let city = document.querySelector("#city");
   city.innerHTML = respondedCity;
 }
+
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "c73239399918e583c389935335c11e48";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeatherConditions);
-  let reverseApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
-  axios.get(reverseApiUrl).then(showCity);
+  
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function getCurrentPosition() {
