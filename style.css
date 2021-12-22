@@ -47,6 +47,15 @@ li {
   line-height: 35px;
   font-family: Arial, Helvetica, sans-serif;
 }
+li:first-letter {
+  text-transform: capitalize;
+}
+#current-location-button {
+  background-color: #08415a;
+}
+#search{
+  background-color: #08415a;
+}
 #temperature {
     position: relative;
     left: 100px;
@@ -71,25 +80,20 @@ li {
     bottom: 125px;
 }
 
-li:first-letter {
-  text-transform: capitalize;
-}
-
-
 .weather-app-wrapper {
   margin: 30px auto;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .weather-app {
   padding: 34px;
   border: 1px solid #dadde1;
   border-radius: 15px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   position: relative;
   left: 300px;
-  border-color: black;
+  border-color: rgb(146, 142, 142);
   background-color:rgb(188, 223, 247);
   opacity: 0.7;
   display: block;
@@ -102,7 +106,7 @@ li:first-letter {
 .link {
     position: relative;
     left: 450px;
-    top: 20px;
+    top: 5px;
     color: rgb(8, 7, 8);
 }
 
