@@ -58,25 +58,25 @@ li:first-letter {
 }
 #temperature {
     position: relative;
-    left: 100px;
-    bottom: 115px;
+    left: 90px;
+    bottom:115px;
     color: rgb(128, 124, 139);
     font-size: 80px;
     
 }
 #celsius-link {
     position: relative;
-    left: 100px;
+    left: 94px;
     bottom: 125px;
 }
 #fahrenheit-link {
     position: relative;
     left: 100px;
-    bottom: 125px;
+    bottom:125px;
 }
 .grami {
     position: relative;
-    left: 100px;
+    left:100px;
     bottom: 125px;
 }
 
@@ -136,6 +136,7 @@ li:first-letter {
   position: relative;
   bottom: 0px;
 }
+
 
 
 
