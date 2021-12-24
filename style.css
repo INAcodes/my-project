@@ -39,7 +39,7 @@ li {
   padding: 0;
   position: relative;
   left: 70px;
-  top: 10px;
+  top: 25px;
 
   color: rgb(87, 89, 94);
   font-size: 24px;
@@ -58,27 +58,10 @@ li:first-letter {
 }
 #temperature {
     position: relative;
-    left: 90px;
-    bottom:115px;
     color: rgb(128, 124, 139);
     font-size: 80px;
-    
 }
-#celsius-link {
-    position: relative;
-    left: 94px;
-    bottom: 125px;
-}
-#fahrenheit-link {
-    position: relative;
-    left: 100px;
-    bottom:125px;
-}
-.grami {
-    position: relative;
-    left:100px;
-    bottom: 125px;
-}
+
 
 .weather-app-wrapper {
   margin: 30px auto;
@@ -113,8 +96,7 @@ li:first-letter {
 .weather-temperature .units {
   position: relative;
   font-size: 16px;
-  top: -34px;
-  bottom: 50px;
+  top: -40px;
   padding:0px;
 }
 .weather-forecast {
